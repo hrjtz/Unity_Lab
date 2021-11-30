@@ -6,31 +6,44 @@ public class Enemy : MonoBehaviour
 {
     private GameObject cart;
     public float speed;
-    public float cartBoundX = 3f;
-    public float cartBoundZ = 2f;
+    private Vector3 cartPos;
+    private Vector3 enemyPos;
+    float ogspeed;
 
     // Start is called before the first frame update
     void Start()
     {
         cart = GameObject.Find("Cart");
+        ogspeed = speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        cartPos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
+        enemyPos = new Vector3(transform.position.x, 0, transform.position.z);
         enemyMovement();
     }
 
     void enemyMovement()
     {
-        Vector3 cartPos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
-        Vector3 enemyPos = new Vector3(transform.position.x, 0, transform.position.z);
+        Vector3 lookDirection = (cartPos - enemyPos).normalized;
+        transform.Translate(lookDirection * Time.deltaTime * speed);
+    }
 
-        if (!(enemyPos.x < cartPos.x + cartBoundX && enemyPos.z < cartPos.z + cartBoundZ) | !(enemyPos.x > cartPos.x - cartBoundX && enemyPos.z > cartPos.z - cartBoundZ))
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Cart"))
         {
-            Vector3 lookDirection = (cartPos - enemyPos).normalized;
-            transform.Translate(lookDirection * Time.deltaTime * speed);
+            ogspeed = speed;
+            speed = 0;
+            Debug.Log("Cart is being attacked!");
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        speed = ogspeed;
     }
 
 }
