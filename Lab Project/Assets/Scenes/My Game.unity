@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 187d7eff2e231d54fb98ce8e98ac89b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -499,6 +499,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2932143288026337956, guid: 1b387d835c3b81243baede1bc8de696e, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932143288026337956, guid: 1b387d835c3b81243baede1bc8de696e, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 2932143288026337957, guid: 1b387d835c3b81243baede1bc8de696e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -520,6 +528,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1202954704}
+    - target: {fileID: 7456200155661073378, guid: 943de7e2ef446cd419602e786b7b3c39, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456200155661073378, guid: 943de7e2ef446cd419602e786b7b3c39, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 7456200155661073379, guid: 943de7e2ef446cd419602e786b7b3c39, type: 3}
       propertyPath: m_RootOrder
       value: 3
