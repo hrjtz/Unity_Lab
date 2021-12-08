@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 1202954707}
   - component: {fileID: 1202954706}
   - component: {fileID: 1202954705}
+  - component: {fileID: 1202954710}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -507,6 +508,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202954710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202954704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d190a12a4c90d441bd5cbaf429e4d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
 --- !u!1 &1577933820
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +582,7 @@ GameObject:
   - component: {fileID: 1930169746}
   - component: {fileID: 1930169745}
   - component: {fileID: 1930169749}
-  - component: {fileID: 1930169750}
+  - component: {fileID: 1930169751}
   m_Layer: 0
   m_Name: Cart
   m_TagString: Cart
@@ -668,7 +682,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1930169750
+--- !u!114 &1930169751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -677,6 +691,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1930169744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d190a12a4c90d441bd5cbaf429e4d12, type: 3}
+  m_Script: {fileID: 11500000, guid: e2c0ab77e7f352b43bc1beb36219c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  player: {fileID: 1202954704}
+  isBeingDamaged: 0
+  distanceFromCartx: 10
+  cartRangex: 3
+  distanceFromCartz: 2
+  cartRangez: 2
