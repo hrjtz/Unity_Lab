@@ -30,7 +30,7 @@ public class CartController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             isBeingDamaged = true;
         }
@@ -38,7 +38,7 @@ public class CartController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             isBeingDamaged = false;
         }
