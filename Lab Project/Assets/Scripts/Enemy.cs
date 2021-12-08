@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Vector3 cartPos;
     private Vector3 enemyPos;
     float ogspeed;
+    private bool isTouchingCart;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cartPos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
-        enemyPos = new Vector3(transform.position.x, 0, transform.position.z);
-        enemyMovement();
+        if (!isTouchingCart)
+        {
+            cartPos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
+            enemyPos = new Vector3(transform.position.x, 0, transform.position.z);
+            enemyMovement();
+        }
     }
 
     void enemyMovement()
@@ -35,15 +39,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cart"))
         {
-            ogspeed = speed;
-            speed = 0;
-            Debug.Log("Cart is being attacked!");
+            isTouchingCart = true;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        speed = ogspeed;
+        isTouchingCart = false;
     }
 
 }
